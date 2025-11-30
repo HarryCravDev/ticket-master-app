@@ -18,7 +18,6 @@ export const handler = async (
       console.log(
         "No Coventry City events found, possible issue with data retrieval."
       );
-      // todo: Send a error notification here to alert about the missing events.
       await sendSNSAlert({
         subject: "Ticket Checker Alert: No Events Found ❌",
         message:

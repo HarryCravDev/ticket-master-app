@@ -25,20 +25,6 @@ export async function getCoventryCityGames(): Promise<CoventryDBItem[]> {
 
     const events = response.data._embedded?.events;
 
-    console.log(
-      "Tickets: ",
-      JSON.stringify(
-        events?.map((event) => ({
-          name: event.name,
-          date: event.dates.start.localDate,
-          time: event.dates.start.localTime,
-          url: event.url,
-        })),
-        null,
-        2
-      )
-    );
-
     if (!events || events.length === 0) {
       console.log("No upcoming games found on Ticketmaster.");
       return [];
